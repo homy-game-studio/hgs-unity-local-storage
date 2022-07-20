@@ -1,0 +1,17 @@
+{
+  "name": "com.hgs.file-control",
+  "version": "1.0.0",
+  "displayName": "File Control",
+  "description": "Gerencie arquivos e cache com este package",
+  "unity": "2020.1",
+  "keywords": [
+    "Persistency",
+    "File",
+    "Cache"
+  ],
+  "author": {
+    "name": "Homy Game Studio",
+    "email": "contato@homygamestudio.com"
+  },
+  "dependencies": {}
+}
