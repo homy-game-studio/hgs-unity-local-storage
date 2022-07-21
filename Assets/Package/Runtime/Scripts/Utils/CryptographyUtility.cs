@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 using UnityEngine.Profiling;
 
-namespace HGS.FileControl.Utils
+namespace HGS.LocalStorage.Utils
 {
   public static class CriptographyUtility
   {

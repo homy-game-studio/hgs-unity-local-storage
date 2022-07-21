@@ -1,10 +1,10 @@
 using System;
-using HGS.FileControl.Utils;
+using HGS.LocalStorage.Utils;
 using UnityEngine;
 
-namespace HGS.FileControl
+namespace HGS.LocalStorage
 {
-  [CreateAssetMenu(fileName = "CacheStorage", menuName = "HGS/Storage/CacheStorage")]
+  [CreateAssetMenu(fileName = "CacheStorage", menuName = "HGS/LocalStorage/CacheStorage")]
   public class CacheStorage : Storage
   {
     [SerializeField] int expiration = 1440;

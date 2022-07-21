@@ -1,8 +1,8 @@
-using HGS.FileControl.Utils;
+using HGS.LocalStorage.Utils;
 using UnityEngine;
 using UnityEngine.Profiling;
 
-namespace HGS.FileControl
+namespace HGS.LocalStorage
 {
   public abstract class Storage : ScriptableObject
   {

@@ -1,11 +1,11 @@
 {
-  "name": "com.hgs.file-control",
+  "name": "com.hgs.local-storage",
   "version": "1.0.0",
-  "displayName": "File Control",
+  "displayName": "HGS Local Storage",
   "description": "Gerencie arquivos e cache com este package",
   "unity": "2020.1",
   "keywords": [
-    "Persistency",
+    "Persistence",
     "File",
     "Cache"
   ],

@@ -1,6 +1,6 @@
 using System.Collections;
-using HGS.FileControl;
-using HGS.FileControl.Texture2DExtension;
+using HGS.LocalStorage;
+using HGS.LocalStorage.Texture2DExtension;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;

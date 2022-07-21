@@ -1,5 +1,5 @@
-using HGS.FileControl;
-using HGS.FileControl.StringExtension;
+using HGS.LocalStorage;
+using HGS.LocalStorage.StringExtension;
 using UnityEngine;
 using UnityEngine.UI;
 

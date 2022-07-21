@@ -1,7 +1,7 @@
 using UnityEngine;
 
-namespace HGS.FileControl
+namespace HGS.LocalStorage
 {
-  [CreateAssetMenu(fileName = "PersistentStorage", menuName = "HGS/Storage/PersistentStorage")]
+  [CreateAssetMenu(fileName = "PersistentStorage", menuName = "HGS/LocalStorage/PersistentStorage")]
   public class PersistentStorage : Storage { }
 }
