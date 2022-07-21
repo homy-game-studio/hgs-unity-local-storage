@@ -10,7 +10,206 @@ Local Storage utiliza `ScriptableObjects` para tornar o acesso à arquivos mais 
 
 ## Instalação
 
-Para instalar, abra o **Unity Package Manager** e adicione o pacote git:
+Abra o **Unity Package Manager** e adicione o pacote git:
+
+`https://github.com/homy-game-studio/hgs-unity-local-storage.git#upm`
+
+Se preferir, substitua `upm` uma versão especifica, exemplo:
+
+`https://github.com/homy-game-studio/hgs-unity-local-storage.git#1.0.0`
+
+## PersistentStorage
+
+`PersistentStorage` mantém as funcionalidades basicas de gestão de arquivo e criptografia. Funciona como `PlayerPrefs`, porém sem restrição de tamanho.
+
+Atributos
+
+| Propriedade  | Descrição                                                                                    |
+| ------------ | -------------------------------------------------------------------------------------------- |
+| `useCrypto`  | Quando verdadeiro, utiliza criptografia na escrita/leitura dos arquivos no disco.            |
+| `passPhrase` | Sua senha de criptografgia, utilizado apenas quando `useCrypto` for verdadeiro.              |
+| `folder`     | Pasta onde os arquivos serão salvos, uma barra `/` será adicionada automaticamente no final. |
+
+Metódos
+
+| Metódo                                 | Retorno  | Descrição                                                                       |
+| -------------------------------------- | -------- | ------------------------------------------------------------------------------- |
+| `Exists(string key)`                   | `bool`   | Verifica se uma chave existe no storage.                                        |
+| `WriteBytes(string key, byte[] bytes)` | `void`   | Cria/Sobrescreve um arquivo com a `key` designada, com o conteúdo de `bytes`    |
+| `ReadBytes(string key)`                | `byte[]` | Lê os bytes salvos na `key` designada, retorna `null` caso o arquivo não exista |
+
+## CacheStorage
+
+`CacheStorage` herda as propriedades de um PersistentStorage, porém adiciona uma camada extra para excluir arquivos expirados. É recomendado para guardar imagens de perfil, configurações remotas, e quaisquer dados que possua tempo de vida.
+
+| Propriedade  | Descrição                                                                                    |
+| ------------ | -------------------------------------------------------------------------------------------- |
+| `useCrypto`  | Quando verdadeiro, utiliza criptografia na escrita/leitura dos arquivos no disco.            |
+| `passPhrase` | Sua senha de criptografgia, utilizado apenas quando `useCrypto` for verdadeiro.              |
+| `folder`     | Pasta onde os arquivos serão salvos, uma barra `/` será adicionada automaticamente no final. |
+| `expiration` | Tempo em minutos para exclusão de automatica de um arquivo individual.                       |
+
+| Metódo                                 | Retorno  | Descrição                                                                                          |
+| -------------------------------------- | -------- | -------------------------------------------------------------------------------------------------- |
+| `Exists(string key)`                   | `bool`   | Verifica se uma chave existe no storage                                                            |
+| `WriteBytes(string key, byte[] bytes)` | `void`   | Cria/Sobrescreve um arquivo com a `key` designada, com o conteúdo de `bytes`                       |
+| `ReadBytes(string key)`                | `byte[]` | Lê os bytes salvos na `key` designada, retorna `null` caso o arquivo não exista ou esteja expirado |
+
+## Extensões
+
+Não manipule bytes diretamente, utilize as extensões disponibilizadas no package:
+
+### StringExtension
+
+Disponivel em:
+
+```cs
+using HGS.LocalStorage.StringExtension;
+```
+
+| Metódo                                    | Retorno  | Descrição                                                                                           |
+| ----------------------------------------- | -------- | --------------------------------------------------------------------------------------------------- |
+| `WriteString(string key, string content)` | `void`   | Cria/Sobrescreve um arquivo com a `key` designada, com o conteúdo de `string`                       |
+| `ReadString(string key)`                  | `string` | Lê uma string salva na `key` designada, retorna `null` caso o arquivo não exista ou esteja expirado |
+
+### Texture2DExtension
+
+Disponivel em:
+
+```cs
+using using HGS.LocalStorage.Texture2DExtension;
+```
+
+| Metódo                                          | Retorno     | Descrição                                                                                            |
+| ----------------------------------------------- | ----------- | ---------------------------------------------------------------------------------------------------- |
+| `WriteTexture2D(string key, Texture2D texture)` | `void`      | Cria/Sobrescreve um arquivo com a `key` designada, com o conteúdo de `texture`                       |
+| `ReadTexture2D(string key)`                     | `Texture2D` | Lê um `Texture2D` salvo na`key`designada, retorna`null` caso o arquivo não exista ou esteja expirado |
+
+## Criando um storage
+
+1. Na aba project clique com o botão direito do mouse e crie um novo `PersistentStorage` ou `CacheStorage`.
+
+![](images/persistent-storage-create.png)
+
+2. Seu `Storage` será um `ScriptableObject`.
+
+![](images/persistent-storage-inspector.png)
+
+> É recomendado criar um `Storage` para cada pasta. Assim você evita colisão de chaves em partes destintas do seu projeto.
+
+# Exemplos
+
+## Exemplo completo
+
+Você pode baixar o código de exemplo dentro do seu projeto unity através do `Package Manager`:
+
+![](images/sample.png)
+
+## Escrita e leitura de string
+
+```cs
+using HGS.LocalStorage;
+using HGS.LocalStorage.StringExtension;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class StringSample : MonoBehaviour
+{
+  [SerializeField] Storage storage;
+  [SerializeField] string key;
+  [SerializeField] InputField inputField;
+  [SerializeField] Button writeBtn;
+  [SerializeField] Button readBtn;
+
+  void Awake()
+  {
+    writeBtn.onClick.AddListener(HandleOnClickBtnWrite);
+    readBtn.onClick.AddListener(HandleOnClickBtnRead);
+  }
+
+  private void HandleOnClickBtnRead()
+  {
+    // Lê a string salva na chave designada.
+    inputField.text = storage.ReadString(key);
+  }
+
+  private void HandleOnClickBtnWrite()
+  {
+    // Escreve o conteúdo  do text  field na chave designada, dentro do storage...
+    // ...criando um novo arquivo para esta chave
+    storage.WriteString(key, inputField.text);
+  }
+}
+```
+
+## Escrita e leitura de Texture2D
+
+```cs
+using System.Collections;
+using HGS.LocalStorage;
+using HGS.LocalStorage.Texture2DExtension;
+using UnityEngine;
+using UnityEngine.Networking;
+using UnityEngine.UI;
+
+public class Texture2DSample : MonoBehaviour
+{
+  [SerializeField] Storage storage;
+    // Utilizamos url como chave da textura no storage.
+  [SerializeField] string url;
+  [SerializeField] RawImage image;
+
+  void Start()
+  {
+    Load(url);
+  }
+
+  private void Load(string imgUrl)
+  {
+    // Checa se o arquivo existe no storage, caso exista, faz a leitura, caso contrario, baixa a imagem.
+    if (storage.Exists(imgUrl))
+      LoadFromCache(imgUrl);
+    else
+      LoadFromWeb(imgUrl);
+  }
+
+  private void LoadFromCache(string imgUrl)
+  {
+    // obtém a textura no storage
+    var texture = storage.ReadTexture2D(imgUrl);
+    image.texture = texture;
+  }
+
+  private void LoadFromWeb(string imgUrl)
+  {
+    StartCoroutine(Download(imgUrl));
+  }
+
+  IEnumerator Download(string url)
+  {
+    var request = UnityWebRequestTexture.GetTexture(url);
+
+    Debug.Log($"downloading: {url}");
+
+    yield return request.SendWebRequest();
+
+    if (request.result != UnityWebRequest.Result.Success)
+    {
+      Debug.LogError($"Download of {url} failed!");
+    }
+    else
+    {
+      var texture = DownloadHandlerTexture.GetContent(request);
+
+      image.texture = texture;
+
+      // Salva a textura no storage
+      storage.WriteTexture2D(url, texture);
+    }
+  }
+}
+
+```
 
 # Como contribuir
 
