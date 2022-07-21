@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/homy-game-studio/hgs-unity-local-storage/compare/v1.0.0...v1.0.1) (2022-07-21)
+
+
+### Bug Fixes
+
+* **Storage:** remove codigo de depuracao ([33a95a2](https://github.com/homy-game-studio/hgs-unity-local-storage/commit/33a95a24e420505e08905ef4bff27341c0f410cf))
+
 # 1.0.0 (2022-07-21)
 
 
