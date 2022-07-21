@@ -45,8 +45,6 @@ namespace HGS.LocalStorage
           : bytes;
 
       FileUtility.Write(Root, hash, input);
-
-      Debug.Log($"{key} writed in {Root}{hash}");
     }
   }
 }
