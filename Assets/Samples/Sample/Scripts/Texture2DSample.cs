@@ -11,7 +11,7 @@ public class Texture2DSample : MonoBehaviour
   [SerializeField] string url;
   [SerializeField] RawImage image;
 
-  public void Load()
+  void Start()
   {
     Load(url);
   }
