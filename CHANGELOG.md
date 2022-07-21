@@ -1,3 +1,21 @@
+# 1.0.0 (2022-07-21)
+
+
+### Features
+
+* adiciona CacheStorage ([b86e8aa](https://github.com/homy-game-studio/hgs-unity-file-control/commit/b86e8aa761cb435c6c5ba44ae6f54456736f2958))
+* adiciona classe auxiliar FileUtility ([f702ed3](https://github.com/homy-game-studio/hgs-unity-file-control/commit/f702ed3472ac1b9eaeeb78496a7bcb0fdd3f025b))
+* adiciona CryptographyUtility ([f43a448](https://github.com/homy-game-studio/hgs-unity-file-control/commit/f43a448adeefb694085912d37c1fc57c05c6246d))
+* adiciona PersistentStorage ([602491e](https://github.com/homy-game-studio/hgs-unity-file-control/commit/602491ee781b10af53ca0830a6cd37e8755c2f1b))
+* adiciona sample no package ([34ad99e](https://github.com/homy-game-studio/hgs-unity-file-control/commit/34ad99e4abd679b8a7d8bea08041ac7a28c3a9f5))
+* adiciona StringExtension ([abb2926](https://github.com/homy-game-studio/hgs-unity-file-control/commit/abb292675abf64e38baa4a9327afce655b80d30b))
+* adiciona Texture2DExtension ([515adc6](https://github.com/homy-game-studio/hgs-unity-file-control/commit/515adc635b61b227650a6180f51220945cab49a4))
+
+
+### Performance Improvements
+
+* melhoria de performance em CryptographyUtility ([ab8f185](https://github.com/homy-game-studio/hgs-unity-file-control/commit/ab8f1851d79e643e5ae7d9191c56481824bd9de5))
+
 ## [1.2.1](https://github.com/homy-game-studio/hgs-upm-template/compare/v1.2.0...v1.2.1) (2021-06-17)
 
 
