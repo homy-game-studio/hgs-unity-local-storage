@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace HGS.FileControl.StringExtension
+namespace HGS.LocalStorage.StringExtension
 {
   public static class StorageStringExtension
   {

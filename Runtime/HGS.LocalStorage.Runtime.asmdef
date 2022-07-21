@@ -1,5 +1,5 @@
 {
-    "name": "HGS.FileControl.Runtime",
+    "name": "HGS.LocalStorage.Runtime",
     "rootNamespace": "",
     "references": [],
     "includePlatforms": [],

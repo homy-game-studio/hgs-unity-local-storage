@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using UnityEngine.Profiling;
 
-namespace HGS.FileControl.Utils
+namespace HGS.LocalStorage.Utils
 {
   public static class FileUtility
   {

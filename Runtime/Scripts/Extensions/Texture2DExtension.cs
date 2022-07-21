@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Profiling;
 
-namespace HGS.FileControl.Texture2DExtension
+namespace HGS.LocalStorage.Texture2DExtension
 {
   public static class StorageTexture2DExtension
   {
