@@ -1,4 +1,5 @@
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![openupm](https://img.shields.io/npm/v/com.hgs.local-storage?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.hgs.local-storage/)
 
 # Introdução
 
@@ -10,7 +11,11 @@ Local Storage utiliza `ScriptableObjects` para tornar o acesso à arquivos mais 
 
 ## Instalação
 
-Abra o **Unity Package Manager** e adicione o pacote git:
+OpenUPM:
+
+`openupm add com.hgs.local-storage`
+
+Package Manager:
 
 `https://github.com/homy-game-studio/hgs-unity-local-storage.git#upm`
 
