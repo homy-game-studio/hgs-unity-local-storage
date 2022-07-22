@@ -11,7 +11,11 @@ Local Storage utiliza `ScriptableObjects` para tornar o acesso à arquivos mais 
 
 ## Instalação
 
-Abra o **Unity Package Manager** e adicione o pacote git:
+OpenUPM:
+
+`openupm add com.hgs.local-storage`
+
+Package Manager:
 
 `https://github.com/homy-game-studio/hgs-unity-local-storage.git#upm`
 
