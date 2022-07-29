@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/homy-game-studio/hgs-unity-local-storage/compare/v1.1.0...v1.1.1) (2022-07-29)
+
+
+### Bug Fixes
+
+* **CacheStorage:** Add file exists after invalidate ([27dcaca](https://github.com/homy-game-studio/hgs-unity-local-storage/commit/27dcacae4480781fd404f3cf087d9d1b03e1c3d3))
+
 # [1.1.0](https://github.com/homy-game-studio/hgs-unity-local-storage/compare/v1.0.1...v1.1.0) (2022-07-29)
 
 
