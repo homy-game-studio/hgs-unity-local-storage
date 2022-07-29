@@ -1,6 +1,6 @@
 {
   "name": "com.hgs.local-storage",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "displayName": "HGS Local Storage",
   "description": "Gerencie arquivos e cache com este package",
   "unity": "2020.1",
