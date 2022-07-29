@@ -13,7 +13,7 @@ namespace HGS.LocalStorage
     {
       var hash = CriptographyUtility.Hash(key);
       var path = Root + hash;
-      InvalidateFile(path);
+      if (FileUtility.Exists(path)) InvalidateFile(path);
     }
 
     private void InvalidateFile(string path)
