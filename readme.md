@@ -42,6 +42,7 @@ Metódos
 | `Exists(string key)`                   | `bool`   | Verifica se uma chave existe no storage.                                        |
 | `WriteBytes(string key, byte[] bytes)` | `void`   | Cria/Sobrescreve um arquivo com a `key` designada, com o conteúdo de `bytes`    |
 | `ReadBytes(string key)`                | `byte[]` | Lê os bytes salvos na `key` designada, retorna `null` caso o arquivo não exista |
+| `Clear()`                              | `void`   | Delete all files from storage                                                   |
 
 ## CacheStorage
 
@@ -59,6 +60,7 @@ Metódos
 | `Exists(string key)`                   | `bool`   | Verifica se uma chave existe no storage                                                            |
 | `WriteBytes(string key, byte[] bytes)` | `void`   | Cria/Sobrescreve um arquivo com a `key` designada, com o conteúdo de `bytes`                       |
 | `ReadBytes(string key)`                | `byte[]` | Lê os bytes salvos na `key` designada, retorna `null` caso o arquivo não exista ou esteja expirado |
+| `Clear()`                              | `void`   | Delete all files from storage                                                                      |
 
 ## Extensões
 
