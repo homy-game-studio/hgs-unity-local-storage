@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/homy-game-studio/hgs-unity-local-storage/compare/v1.0.1...v1.1.0) (2022-07-29)
+
+
+### Features
+
+* **Storage:** Add method Clear() ([3d9f5ff](https://github.com/homy-game-studio/hgs-unity-local-storage/commit/3d9f5ff9115587e88da920c268b643d8a23c1673))
+
 ## [1.0.1](https://github.com/homy-game-studio/hgs-unity-local-storage/compare/v1.0.0...v1.0.1) (2022-07-21)
 
 
