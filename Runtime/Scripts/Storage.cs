@@ -20,6 +20,13 @@ namespace HGS.LocalStorage
       return FileUtility.Exists(path);
     }
 
+    public void Clear()
+    {
+      FileUtility
+        .GetFiles(Root)
+        .ForEach(FileUtility.Delete);
+    }
+
     public virtual byte[] ReadBytes(string key)
     {
       Profiler.BeginSample("Storage Read");
