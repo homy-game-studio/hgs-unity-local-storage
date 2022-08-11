@@ -92,6 +92,19 @@ using using HGS.LocalStorage.Texture2DExtension;
 | `WriteTexture2D(string key, Texture2D texture)` | `void`      | Cria/Sobrescreve um arquivo com a `key` designada, com o conteúdo de `texture`                       |
 | `ReadTexture2D(string key)`                     | `Texture2D` | Lê um `Texture2D` salvo na`key`designada, retorna`null` caso o arquivo não exista ou esteja expirado |
 
+### JsonExtension
+
+Disponivel em:
+
+```cs
+using using HGS.LocalStorage.JsonExtension;
+```
+
+| Metódo                              | Retorno | Descrição                                                                                       |
+| ----------------------------------- | ------- | ----------------------------------------------------------------------------------------------- |
+| `WriteObject<T>(string key, T obj)` | `void`  | Cria/Sobrescreve um arquivo com a `key` designada, com o conteúdo de `T`                        |
+| `ReadObject<T>(string key)`         | `T`     | Lê um `T` salvo na `key` designada, retorna `null` caso o arquivo não exista ou esteja expirado |
+
 ## Criando um storage
 
 1. Na aba project clique com o botão direito do mouse e crie um novo `PersistentStorage` ou `CacheStorage`.
