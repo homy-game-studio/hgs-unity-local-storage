@@ -18,6 +18,10 @@
     {
       "displayName": "Sample",
       "path": "Samples~/Sample"
+    },
+    {
+      "displayName": "SaveScriptableObject",
+      "path": "Samples~/SaveScriptableObject"
     }
   ]
 }
