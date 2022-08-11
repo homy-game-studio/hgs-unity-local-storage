@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/homy-game-studio/hgs-unity-local-storage/compare/v1.1.1...v1.1.2) (2022-08-11)
+
+
+### Bug Fixes
+
+* **Samples:** Move sample files to Package/Samples ([13f42c6](https://github.com/homy-game-studio/hgs-unity-local-storage/commit/13f42c6b1dbe3d52891e9f7eb528eb6294bdd135))
+
 ## [1.1.1](https://github.com/homy-game-studio/hgs-unity-local-storage/compare/v1.1.0...v1.1.1) (2022-07-29)
 
 
