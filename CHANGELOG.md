@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/homy-game-studio/hgs-unity-local-storage/compare/v1.1.2...v1.2.0) (2022-08-11)
+
+
+### Features
+
+* **Extensions:** Add JsonExtension ([db45d05](https://github.com/homy-game-studio/hgs-unity-local-storage/commit/db45d058256fa2f072eb61bf28d889af19d4de9e))
+
 ## [1.1.2](https://github.com/homy-game-studio/hgs-unity-local-storage/compare/v1.1.1...v1.1.2) (2022-08-11)
 
 
